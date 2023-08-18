@@ -1,0 +1,222 @@
+body {
+  margin: 0;
+  background-color: rgb(0, 0, 0);
+  overflow-x: hidden;
+}
+
+/* header */
+
+header {
+  /* border: 1px solid red; */
+  width: 100vw;
+  height: 9vh;
+  padding: 15px 39px;
+  box-sizing: border-box;
+  background: rgb(84, 164, 182);
+  background: linear-gradient(
+    180deg,
+    rgba(84, 164, 182, 1) 8%,
+    rgba(61, 119, 131, 1) 68%,
+    rgba(59, 115, 127, 1) 83%
+  );
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#leftSection {
+  height: 100%;
+  width: 10vw;
+  box-sizing: border-box;
+  /* border: 1px solid greenyellow; */
+}
+img {
+  height: 100%;
+  width: 100%;
+}
+#rightSection {
+  width: 45vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* border: 1px solid greenyellow; */
+  height: 100%;
+  box-sizing: border-box;
+}
+#navOps {
+  width: 50%;
+}
+#navOps ul {
+  display: flex;
+  justify-content: space-evenly;
+  list-style-type: none;
+
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 0px;
+}
+
+#navOps li a {
+  text-decoration: none;
+  color: rgb(236, 236, 236);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+#searchBar {
+  width: 40%;
+  height: 100%;
+  display: flex;
+}
+#searchBar input {
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  width: 82%;
+  border: none;
+  border-radius: 10px 0px 0px 10px;
+  font-size: 1.1rem;
+  padding-left: 15px;
+}
+#searchBar input:focus {
+  outline: none;
+}
+#searchBar input::placeholder {
+  color: rgb(187, 187, 187);
+}
+#searchBar button {
+  width: 15%;
+  background-color: black;
+  border-radius: 0px 10px 10px 0px;
+  padding: 5px;
+}
+#searchIcon {
+  filter: invert(70%);
+}
+
+/* cards */
+
+main {
+  width: 100%;
+  margin-top: 4%;
+  box-sizing: border-box;
+  display: flex;
+}
+
+#heroList {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+
+  list-style-type: none;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding-inline-start: 0px;
+}
+
+#heroList li {
+  width: 20vw;
+  height: 50vh;
+  margin-bottom: 5%;
+  text-align: center;
+  box-sizing: border-box;
+  border-radius: 20px 20px 0px 0px;
+  /* border: 5px solid rgb(21, 145, 98); */
+  background: rgb(164, 35, 35);
+  background: linear-gradient(
+    180deg,
+    rgba(164, 35, 35, 0.7) 80%,
+    rgba(154, 32, 32, 0.7) 86%,
+    rgba(138, 23, 23, 0.7) 92%,
+    rgba(102, 37, 37, 0.7) 97%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  transition: all 0.2s ease-in-out;
+}
+
+#heroList li:hover {
+  scale: 1.1;
+}
+
+#heroList img {
+  width: 100%;
+  height: 80%;
+  border-radius: 20px 20px 0px 0px;
+}
+
+#heroList p {
+  color: white;
+  font-size: 1.3rem;
+}
+
+/* footer */
+
+#footer {
+  height: 7vh;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: rgba(90, 33, 33, 0.979);
+  position: relative;
+  bottom: 0;
+  color: white;
+  text-align: center;
+  padding-top: 1%;
+  font-size: 1.2rem;
+}
+
+/* info of hero div */
+
+#desDiv {
+  color: white;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0% 5%;
+  box-sizing: border-box;
+  justify-content: space-between;
+  /* margin-left: 10%; */
+  /* height: 100vh; */
+}
+
+.prime {
+  background-color: rgba(240, 255, 255, 0.363);
+  border-radius: 0 0 15% 0;
+}
+
+#desDiv div {
+  width: 40%;
+  margin-bottom: 5%;
+}
+
+#imgDiv {
+  /* margin-left: 2%; */
+  width: 30vw;
+  height: 50vh;
+  border: 5px solid rgb(0, 110, 255);
+  clip-path: polygon(0% 0%, 80% 0%, 100% 100%, 0% 100%);
+}
+#desDiv p {
+  font-size: 1.1rem;
+  word-spacing: 5px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  margin-top: 10%;
+}
+
+#desDiv li {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  font-family: sans-serif;
+}
+#desDiv li:hover {
+  color: aqua;
+}
+
+#desDiv a{
+  text-decoration: none;
+  color: rgb(243, 72, 72);
+}
