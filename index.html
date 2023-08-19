@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/bee9754418.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
     <title>Marvel</title>
 </head>
@@ -12,22 +13,23 @@
 
     <header>
         <div id="leftSection">
-            <a href="#">
+            <a href="">
                 <img src="./image/marvelLogo.png" alt="marvel Logo">
             </a>
         </div>
         <div id="rightSection">
             <div id="navOps">
                 <ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="">Favourite</a></li>
-                    <li><a href="">About</a></li>
+                    <li><a href="" id="homePage">Home</a></li>
+                    <li><a href="javascript:showFav()" id="favPage">Favourite</a></li>
+                    <li><a href="javascript:showAbout()" id="aboutPage">About</a></li>
                 </ul>
             </div>
             <div id="searchBar">
                 <input type="text" placeholder="type here.." id="searchInput">
                 <button type="submit"><a href=""><img src="./image/magnifying-glass.png" alt="search png"
                             id="searchIcon"></a></button>
+                <ul id="suggestions"></ul>
             </div>
         </div>
     </header>
