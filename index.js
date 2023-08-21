@@ -37,10 +37,10 @@ try {
             var data = await response.json()
             var mainData = data.data.results
             showList(mainData)
-
             favColorChange()
+            searchFun(mainData)
 
-             
+
 
             footer.innerText = data.attributionText;
         })
@@ -296,39 +296,65 @@ function favColorChange() {
 }
 
 
+
+
 //  search box
 
-// const carNames = [
-//     "Toyota Camry",
-//     "Honda Civic",
-//     "Ford Mustang",
-//     "Chevrolet Corvette",
-//     "Nissan Altima",
-//     "BMW 3 Series",
-//     "Mercedes-Benz C-Class"
-// ];
 
-// const searchBox = document.getElementById("searchBox");
-// const suggestionsList = document.getElementById("suggestions");
+function searchFun(mainData) {
 
-// searchBox.addEventListener("input", function () {
-//     const searchQuery = searchBox.value.toLowerCase();
-//     const filteredCars = carNames.filter(car => car.toLowerCase().includes(searchQuery));
+    const searchBox = document.getElementById("searchInput");
+    const suggestionsList = document.getElementById("suggestions");
+    const searchBtn = document.getElementById("searchBtn");
 
-//     // Clear previous suggestions
-//     suggestionsList.innerHTML = "";
 
-//     // Add new suggestions
-//     filteredCars.forEach(car => {
-//         const suggestionItem = document.createElement("li");
-//         suggestionItem.textContent = car;
-//         suggestionsList.appendChild(suggestionItem);
-//     });
-// });
 
-// suggestionsList.addEventListener("click", function (event) {
-//     if (event.target.tagName === "LI") {
-//         searchBox.value = event.target.textContent;
-//         suggestionsList.innerHTML = ""; // Clear suggestions
-//     }
-// });
+    searchBox.addEventListener("input", function () {
+        if (searchBox.value == "") {
+            suggestionsList.removeChild(li);
+            console.log("empty")
+        }
+        const searchQuery = searchBox.value.toLowerCase();
+        const filteredHero = mainData.filter(hero => hero.name.toLowerCase().includes(searchQuery));
+
+        // Clear previous suggestions
+        suggestionsList.innerHTML = "";
+
+        // Add new suggestions
+        filteredHero.forEach(hero => {
+            const suggestionItem = document.createElement("li");
+            suggestionItem.textContent = hero.name;
+            suggestionsList.appendChild(suggestionItem);
+        });
+    });
+
+    suggestionsList.addEventListener("click", function (event) {
+        if (event.target.tagName === "LI") {
+            searchBox.value = event.target.textContent;
+            suggestionsList.innerHTML = "";
+        }
+    });
+
+    // handle search result
+
+    searchBtn.addEventListener("click", function () {
+        if (searchBox.value == "") {
+            return;
+        } else {
+
+            let heroName = searchBox.value
+            console.log(heroName)
+            for (H of mainData) {
+                if (H.name == heroName) {
+                    renderHero(H.id)
+                    searchBox.value = ""
+                }
+            }
+
+        }
+
+    })
+
+}
+
+
